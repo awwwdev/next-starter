@@ -1,13 +1,18 @@
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { HTMLAttributes, useEffect, useState } from "react";
 import Icon from "@/components/Icon";
-type Props = {
-  className?: string;
-  children: (theme: string) => React.ReactNode;
+type RenderProp = (theme: string) => React.ReactNode;
+type Props = ClassName & HTMLAttributes<HTMLButtonElement> & {
+  children?: React.ReactNode | RenderProp;
+  onClick?: () => void;
 }
 
-const ThemeToggler = ({ className, children }: Props) => {
+const ThemeToggler = ({ children, onClick, ...props }: Props) => {
 
+  const clickHandler = () => {
+    toggleTheme();
+    onClick?.();
+  }
   const { theme, setTheme } = useTheme()
   const [hasMountedClientSide, setHasMountedClientSide] = useState(false)
   useEffect(() => setHasMountedClientSide(true), []);
@@ -17,21 +22,28 @@ const ThemeToggler = ({ className, children }: Props) => {
     if (theme === "light") setTheme("dark");
     if (theme === "dark") setTheme("system");
   }
+
+  if (children) {
+    return (
+      <button onClick={clickHandler} {...props}>
+        {hasMountedClientSide &&
+          <>
+            {typeof children === "function" ? children(theme) : children}
+          </>
+        }
+      </button>
+    )
+  }
   return (
-    // <select value={theme} onChange={e => setTheme(e.target.value)} data-test-id='theme-selector'>
-    //   <option value="system">System</option>
-    //   {mounted && (
-    //     <>
-    //       <option value="dark">Dark</option>
-    //       <option value="light">Light</option>
-    //     </>
-    //   )}
-    // </select>
-    <button onClick={toggleTheme} className={`${className}`}>
-      {hasMountedClientSide && children(theme)}
+    <button onClick={clickHandler}  {...props}>
+      {hasMountedClientSide && (
+        <div className="flex ac gap-2 ">
+          <Icon name={theme === "dark" ? "i-ph-moon" : theme === "light" ? "i-ph-sun" : "i-ph-circle-half"} className="c-gray11" />
+          <span className="sr-only sm:not-sr-only capitalize">{theme === "system" ? "Auto" : theme}</span>
+        </div>
+      )}
     </button>
   )
-
 }
 
 export default ThemeToggler;

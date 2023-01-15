@@ -20,7 +20,6 @@ specifiers:
   unocss-preset-theme: ^0.3.0
 
 dependencies:
-  '@iconify-json/ph': 1.1.3
   '@next/font': 13.1.2
   '@types/node': 18.11.18
   '@types/react': 18.0.26
@@ -32,13 +31,14 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   typescript: 4.9.4
-  unocss-preset-theme: 0.3.0
 
 devDependencies:
+  '@iconify-json/ph': 1.1.3
   '@radix-ui/colors': 0.1.8
   '@unocss/transformer-variant-group': 0.48.4
   '@unocss/webpack': 0.48.4
   unocss: 0.48.4_@unocss+webpack@0.48.4
+  unocss-preset-theme: 0.3.0
 
 packages:
 
@@ -113,10 +113,11 @@ packages:
     resolution: {integrity: sha512-QSzWMGF8GiBPW89RpQ3bEwEjuRWTv/xxskStUpK7tsXlz3qoPTEM5CQxDUpzUmc9luAWViqD/shIUiuNhUeolw==}
     dependencies:
       '@iconify/types': 2.0.0
-    dev: false
+    dev: true
 
   /@iconify/types/2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+    dev: true
 
   /@iconify/utils/2.0.12:
     resolution: {integrity: sha512-hhUyt1/k5RRhfcW/PRRdBw8e1ACehJT5QEZJRm7HnkCiUx11/0ccLr7K0OMlPSwjnfYcBS2gAUD3EpmL0iJCkQ==}
@@ -492,7 +493,7 @@ packages:
 
   /@unocss/core/0.46.5:
     resolution: {integrity: sha512-apPWISH2ASKySyp4vBAkEzr5XNJDv4mu26eQ4wvg2a32cHRokUsiHLWFNMDe7oJquivTAOHsXqbLQuR9ePKNSg==}
-    dev: false
+    dev: true
 
   /@unocss/core/0.48.4:
     resolution: {integrity: sha512-ecoTzblwEIQGD4QhMo1U36rVwvTR9XW+gtJRhCnVyjy7L23AbGJu2xkRZSsH3k/v0gs0gx/SHNfyOqA52BNfoA==}
@@ -2637,7 +2638,7 @@ packages:
     resolution: {integrity: sha512-vfhbQuN+slGWu73drpU3uqhL3r/wqq3mxPWL1gLz7grNBP9gGUYV39oqWoZbeeXXaVKaomNBe1r0jJGKh+oAgw==}
     dependencies:
       '@unocss/core': 0.46.5
-    dev: false
+    dev: true
 
   /unocss/0.48.4_@unocss+webpack@0.48.4:
     resolution: {integrity: sha512-kA584VQ2z6BPxWAcAVVy+yq5N7BALh1PsbVHcaa8RTW+11VF9fNoW33sGehC7e9/kV5tX/EU++1fpkC0TnXkGw==}

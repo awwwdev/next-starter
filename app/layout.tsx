@@ -15,11 +15,7 @@ import Header from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: Children) {
   return (
     <html lang="en" className='dark' suppressHydrationWarning>
       {/*

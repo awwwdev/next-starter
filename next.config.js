@@ -7,8 +7,8 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  // reactStrictMode: true,
-  // swcMinify: true,
+  swcMinify: true,
+  reactStrictMode: true,
   // typescript: {
   //   ignoreBuildErrors: true,
   // },

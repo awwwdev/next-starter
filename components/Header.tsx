@@ -1,6 +1,6 @@
 import ThemeToggler from './ThemeToggler';
 
-const Header = ({ children, ...props }: Children & ClassName) => {
+const Header = ({ children, ...props }: Children & Attrs<"header">) => {
 
   return (
     <header {...props} className='flex gap-2 '>

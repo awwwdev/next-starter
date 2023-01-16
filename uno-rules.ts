@@ -69,7 +69,7 @@ export const shortcuts: UserShortcuts = [
     "table-body-cell": "px-2 py-1 first-of-type:pis-4  last-of-type:pie-4 b-e-1 b-b-1 b-gray5",
     "table-footer-cell": "b-gray5 px-2 py-1 pb-3 first-of-type:(pis-4 rd-bl-xl)  last-of-type:(pie-4  last-of-type:rd-br-xl) b-e-1 ",
   },
-  [/^bf-i-(.*)$/, ([, iconName]: string[]) => `before:content-none before:inline-block before:i-${iconName}`],
-  [/^af-i-(.*)$/, ([, iconName] :  string[]) => `after:content-none before:inline-block after:i-${iconName}`],
+  [/^bf-i-(.*)$/, ([, iconName]: string[]) => `before:content-none  before:inline-block before:vertical-middle before:i-${iconName}`],
+  [/^af-i-(.*)$/, ([, iconName] :  string[]) => `after:content-none before:inline-block before:vertical-middle after:i-${iconName}`],
   [/^ol-(.*)$/, ([, val]: string[]) => `outline-${val}`],
 ];

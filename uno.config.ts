@@ -21,6 +21,11 @@ export default defineConfig<Theme>({
     }),
     // @ts-ignore
     presetTheme<Theme>({
+      selectors: {
+        dark: '.dark',
+        light: '.light',
+      },
+      prefix: '--rdx',
       theme: {
         dark: darkTheme,
       }

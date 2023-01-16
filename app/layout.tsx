@@ -23,7 +23,7 @@ export default function RootLayout({ children }: Children) {
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={`${inter.className} bg-gray1 c-gray11`} >
+      <body className={`${inter.className}  bg-gray1 c-gray11`} >
         <ColorThemeProvider>
           <Header />
           <main>

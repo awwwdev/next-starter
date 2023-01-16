@@ -8,7 +8,7 @@ const nextConfig = {
     appDir: true,
   },
   swcMinify: true,
-  reactStrictMode: true,
+  // reactStrictMode: true,
   // typescript: {
   //   ignoreBuildErrors: true,
   // },

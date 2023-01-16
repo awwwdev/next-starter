@@ -6,7 +6,7 @@ const Header = ({ children, ...props }: Children & Attrs<"header">) => {
     <header {...props} className='flex gap-2 '>
       <a className='fw-900'>Hi</a>
       <nav></nav>
-      <ThemeToggler className='mis-auto' />
+      <ThemeToggler className='' />
     </header>
   )
 };

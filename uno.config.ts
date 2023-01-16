@@ -1,12 +1,13 @@
 // unocss.config.ts
-import { defineConfig, Preset, presetIcons, presetUno, presetWebFonts } from 'unocss';
-import type { Theme } from 'unocss/preset-uno';
+import { defineConfig } from '@unocss/webpack';
+import presetUno from '@unocss/preset-uno';
+import  type { Theme } from '@unocss/preset-uno';
+import presetIcons from '@unocss/preset-icons';
 import presetTheme from 'unocss-preset-theme';
 import transformerVariantGroup  from '@unocss/transformer-variant-group';
 import { rules, shortcuts } from './uno-rules';
-// import { presetForms } from '@julr/unocss-preset-forms'
 import { darkTheme , lightTheme } from './uno-radix-colors';
-export default defineConfig({
+export default defineConfig<Theme>({
   rules,
   shortcuts,
   transformers: [transformerVariantGroup()],
@@ -18,14 +19,12 @@ export default defineConfig({
     presetIcons({
       scale: 1.2,
     }),
-    presetTheme<{}>({
-      selectors: {
-        dark: '.dark',
-        light: '.light',
-      },
-      prefix: '--rdx',
-      theme: {   dark: darkTheme   },
-    }),
+    // @ts-ignore
+    presetTheme<Theme>({
+      theme: {
+        dark: darkTheme,
+      }
+    })
   ],
 });
 

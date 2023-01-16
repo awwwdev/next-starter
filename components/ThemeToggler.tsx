@@ -1,4 +1,5 @@
 import { useTheme } from "next-themes";
+import type { } from "next-themes";
 import { HTMLAttributes, useEffect, useState } from "react";
 import Icon from "@/components/Icon";
 type RenderProp = (theme: string) => React.ReactNode;
@@ -28,7 +29,7 @@ const ThemeToggler = ({ children, onClick, ...props }: Props) => {
       <button onClick={clickHandler} {...props}>
         {hasMountedClientSide &&
           <>
-            {typeof children === "function" ? children(theme) : children}
+            {typeof children === "function" ? children(theme ?? "system") : children}
           </>
         }
       </button>
@@ -39,7 +40,7 @@ const ThemeToggler = ({ children, onClick, ...props }: Props) => {
       {hasMountedClientSide && (
         <div className="flex ac gap-2 ">
           <Icon name={theme === "dark" ? "i-ph-moon" : theme === "light" ? "i-ph-sun" : "i-ph-circle-half"} className="c-gray11" />
-          <span className="sr-only sm:not-sr-only capitalize">{theme === "system" ? "Auto" : theme}</span>
+          <span className="sr-only sm:not-sr-only capitalize">{theme !== "system" ? theme : 'Auto'}</span>
         </div>
       )}
     </button>

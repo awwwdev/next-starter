@@ -1,4 +1,5 @@
-import type { Rule , Shortcut } from 'unocss';
+import type { Rule , UserShortcuts } from '@unocss/core';
+
 export const rules: Rule[] =  [
   ['ls-tightest', { 'letter-spacing': '-0.025em' }],
   ['ls-tighter', { 'letter-spacing': '-0.0125em' }],
@@ -16,8 +17,7 @@ export const rules: Rule[] =  [
     ([, minColWidth]) => ({ 'grid-template-columns': `repeat(auto-fill, minmax(min(${minColWidth}, 100%), 1fr))` }),
   ],
 ];
-
-export const shortcuts: Shortcut[] = [ 
+export const shortcuts: UserShortcuts = [ 
   {
     "iso-rel": "relative isolate",
     field: 'px-2 py-1 rd b-0 bg-gray3',
@@ -69,7 +69,7 @@ export const shortcuts: Shortcut[] = [
     "table-body-cell": "px-2 py-1 first-of-type:pis-4  last-of-type:pie-4 b-e-1 b-b-1 b-gray5",
     "table-footer-cell": "b-gray5 px-2 py-1 pb-3 first-of-type:(pis-4 rd-bl-xl)  last-of-type:(pie-4  last-of-type:rd-br-xl) b-e-1 ",
   },
-  [/^bf-i-(.*)$/, ([, iconName]) => `before:content-none before:inline-block before:i-${iconName}`],
-  [/^af-i-(.*)$/, ([, iconName]) => `after:content-none before:inline-block after:i-${iconName}`],
-  [/^ol-(.*)$/, ([, val]) => `outline-${val}`],
+  [/^bf-i-(.*)$/, ([, iconName]: string[]) => `before:content-none before:inline-block before:i-${iconName}`],
+  [/^af-i-(.*)$/, ([, iconName] :  string[]) => `after:content-none before:inline-block after:i-${iconName}`],
+  [/^ol-(.*)$/, ([, val]: string[]) => `outline-${val}`],
 ];

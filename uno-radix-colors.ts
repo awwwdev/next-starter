@@ -26,4 +26,3 @@ export const darkTheme = {
     prm: { ...mapSingleColor("orangeDark")  }
   },
 }
-console.log("🚀 ~ darkTheme", darkTheme)

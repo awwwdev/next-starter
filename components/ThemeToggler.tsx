@@ -4,7 +4,11 @@ import useColorScheme from '@/hooks/useColorScheme';
 
 const ThemeToggler = ({ ...props }: HTMLAttributes<HTMLButtonElement>) => {
 
-  const { theme, toggleTheme } = useColorScheme();
+  const { theme, toggleTheme, hasMountedInBrowser } = useColorScheme();
+
+  if (!hasMountedInBrowser) return (<button  {...props} >
+    <span className="bf-i-ph-circle-half sr-only sm:not-sr-only capitalize">Auto</span>
+ </button>)
 
   return (
     <button onClick={e => toggleTheme()}  {...props} >

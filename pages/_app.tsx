@@ -10,13 +10,14 @@ import { QueryClient } from '@tanstack/react-query';
 import { ThemeProvider } from 'next-themes'
 import ThemeToggler from '@/components/ThemeToggler';
 
-import NavCol from "@/components/NavCol";
 import Head from 'next/head'; 
 import Icon from '@/components/Icon';
 import { useState } from 'react';
 import Link from 'next/link';
-
 import { Inter } from '@next/font/google';
+
+const inter = Inter({ subsets: ['latin'] })
+
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -46,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider attribute="class">
-          <div className={Inter.className}>
+          <div className={inter.className}>
 
 <header >          
               <span >

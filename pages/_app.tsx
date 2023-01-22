@@ -47,21 +47,25 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider attribute="class">
-          <div className={inter.className}>
-
-<header >          
-              <span >
-                <ThemeToggler  />
-              </span>
+          <div className={`${inter.className} h-full grid`} style={{gridTemplateRows: 'auto 1fr auto'}}>
+            <header> 
+              <nav className='mx-auto max-w-page py-3 flex justify-between'>
+                <Link href='/' className=' fw-900'>LOGO</Link>
+                <ThemeToggler className=''  />
+              </nav>         
             </header>
-                      <main  >
+           <main >
               <Component {...pageProps} />
           </main>
-          <footer>
-            this is the footer
+          <footer className='bg-gray2'>
+            <div className='mx-auto max-w-page c-gray11 pb-3'>
+              <div className='flex ac jc py-3'> <Link className='' href='/'>LOGO</Link></div>
+              <div className='flex jc ac'>
+                This is the footer
+              </div>
+            </div>
           </footer>
           </div>
-        
         </ThemeProvider>
       </QueryClientProvider>
     </>

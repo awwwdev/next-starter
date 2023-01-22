@@ -11,10 +11,10 @@ const ThemeToggler = ({ ...props }: HTMLAttributes<HTMLButtonElement>) => {
  </button>)
 
   return (
-    <button onClick={e => toggleTheme()}  {...props} >
-      {theme === "system" && <span className="bf-i-ph-circle-half sr-only sm:not-sr-only capitalize">Auto</span>}
-      {theme === "dark" && <span className="bf-i-ph-moon sr-only sm:not-sr-only capitalize">Dark</span>}
-      {theme === "light" && <span className="bf-i-ph-sun sr-only sm:not-sr-only capitalize">Light</span>}
+    <button onClick={e => toggleTheme()}  className='bg-red3' {...props} >
+      {theme === "system" && <span className="bf-i-ph-circle-half sr-only sm:not-sr-only capitalize flex gap-1 ac jc">Auto</span>}
+      {theme === "dark" && <span className="bf-i-ph-moon sr-only sm:not-sr-only capitalize flex gap-1 ac jc">Dark</span>}
+      {theme === "light" && <span className="bf-i-ph-sun sr-only sm:not-sr-only capitalize flex gap-1 ac jc">Light</span>}
     </button>
   )
 }

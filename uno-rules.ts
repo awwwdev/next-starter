@@ -11,6 +11,8 @@ export const rules: Rule[] =  [
   ['rel', { 'position': 'relative' }],
   ['abs', { 'position': 'absolute' }],
   ['text-2xs', { 'font-size': '0.6rem' , "line-height" : "0.9rem" }],
+  ['max-w-article', { 'max-width': '60ch' }],
+  ['max-w-page', { 'max-width': '100rem' }],
   [ /^content-(.*)$/, ([, cnt]) => ({ content: `"${cnt}"` }) ],
   [
     /^grid-min-col-(.*)$/,
@@ -56,7 +58,7 @@ export const shortcuts: UserShortcuts = [
       "error-line": "bf-i-ph-x-circle flex ac gap-1 text-sm c-red10",
       "danger-line": "bf-i-ph-warning-octagon flex ac gap-1 text-sm c-red10",
     snack: 'b b-gray7 bg-gray3 c-gray11 rd-lg p-4',
-    H1: 'text-4xl fw-900 ls-tightest c-gray10',
+    H1: 'text-4xl fw-900 ls-tightest c-gray11',
     H2: 'text-3xl fw-900 ls-tight c-gray12',
     H3: 'text-xl fw-900 ls-wide c-gray12 ',
     H4: 'fw-900 ls-widest c-gray12',

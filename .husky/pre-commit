@@ -4,12 +4,12 @@
 echo '🏗️👷 Pre Commit Tests: Linting + Type Checking 🏗️👷'
 
 # Check Prettier standards
-# npm run check-format ||
-# (
-#     echo '🤢🤮🤢🤮 Its FOKING RAW - Your styling looks disgusting. 🤢🤮🤢🤮
-#             Prettier Check Failed. Run npm run format, add changes and try commit again.';
-#     false;
-# )
+npm run check-format ||
+(
+    echo '🤢🤮🤢🤮 Its FOKING RAW - Your styling looks disgusting. 🤢🤮🤢🤮
+            Prettier Check Failed. Run npm run format, add changes and try commit again.';
+    false;
+)
 
 # Check ESLint Standards
 npm run check-lint ||

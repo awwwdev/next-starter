@@ -1,12 +1,12 @@
 // unocss.config.ts
-import { defineConfig } from '@unocss/webpack';
-import presetUno from '@unocss/preset-uno';
-import  type { Theme } from '@unocss/preset-uno';
-import presetIcons from '@unocss/preset-icons';
-import presetTheme from 'unocss-preset-theme';
-import transformerVariantGroup  from '@unocss/transformer-variant-group';
-import { rules, shortcuts } from './uno-rules';
-import { darkTheme , lightTheme } from './uno-radix-colors';
+import { defineConfig } from "@unocss/webpack";
+import presetUno from "@unocss/preset-uno";
+import type { Theme } from "@unocss/preset-uno";
+import presetIcons from "@unocss/preset-icons";
+import presetTheme from "unocss-preset-theme";
+import transformerVariantGroup from "@unocss/transformer-variant-group";
+import { rules, shortcuts } from "./uno-rules";
+import { darkTheme, lightTheme } from "./uno-radix-colors";
 export default defineConfig<Theme>({
   rules,
   shortcuts,
@@ -14,7 +14,7 @@ export default defineConfig<Theme>({
   theme: lightTheme,
   presets: [
     presetUno({
-      dark: "class"
+      dark: "class",
     }),
     presetIcons({
       scale: 1.2,
@@ -22,16 +22,13 @@ export default defineConfig<Theme>({
     // @ts-ignore
     presetTheme<Theme>({
       selectors: {
-        dark: '.dark',
-        light: '.light',
+        dark: ".dark",
+        light: ".light",
       },
-      prefix: '--rdx',
+      prefix: "--rdx",
       theme: {
         dark: darkTheme,
-      }
-    })
+      },
+    }),
   ],
 });
-
-
-

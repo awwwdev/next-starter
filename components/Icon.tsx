@@ -4,16 +4,14 @@
 
 // };
 
-
 type Props = {
   name: string;
   className?: string;
   alt?: string;
   size?: "lg" | "xl" | "sm" | "xs" | "2xl" | "3xl";
-}
+};
 
 export default function Icon(props: Props) {
-
   let fontSize = "";
   if (props.size === "3xl") fontSize = "text-3xl";
   if (props.size === "2xl") fontSize = "text-2xl";
@@ -24,9 +22,8 @@ export default function Icon(props: Props) {
   return (
     <>
       {" "}
-      <span className={`${props.name} inline-block vertical-text-top ${fontSize} ${props.className ?? ""}`}></span >
-      {props.alt && <span className="sr-only">{props.alt}</span>}
-      {" "}
+      <span className={`${props.name} inline-block vertical-text-top ${fontSize} ${props.className ?? ""}`}></span>
+      {props.alt && <span className="sr-only">{props.alt}</span>}{" "}
     </>
-  )
+  );
 }

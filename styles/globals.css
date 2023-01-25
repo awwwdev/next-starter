@@ -1,18 +1,20 @@
 :root {
   --header-height: 2.5em;
 }
-.max-w-article {  max-width: min(90vw, 60ch); }
-.max-w-page    {  max-width: min(94vw, 100rem); }
-
-
+.max-w-article {
+  max-width: min(90vw, 60ch);
+}
+.max-w-page {
+  max-width: min(94vw, 100rem);
+}
 
 body {
-  font-family:"Inter", "Roboto", "Vazirmatn", system-ui, sans-serif;
+  font-family: "Inter", "Roboto", "Vazirmatn", system-ui, sans-serif;
 }
 
 code {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
-  monospace;
+    monospace;
 }
 
 html {
@@ -21,16 +23,16 @@ html {
   line-height: 1.5;
 }
 
-html, body, #__next  { 
+html,
+body,
+#__next {
   height: 100%;
 }
 
-
- p a, .in-text-link {
+p a,
+.in-text-link {
   text-decoration-line: underline;
 }
-
-
 
 @media screen and (max-width: 640px) {
   .mobile-sr-only {
@@ -57,13 +59,10 @@ html, body, #__next  {
   }
 }
 
-
-
 .fade-vertically {
   -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 70%);
   mask-image: linear-gradient(to bottom, black 0%, transparent 70%);
 }
-
 
 @supports (backdrop-filter: blur(1rem)) {
   .bg-blur-if-supports {
@@ -81,10 +80,14 @@ html, body, #__next  {
 }
 
 .space-y-article > * + * {
-    margin-top: 1.5em;
+  margin-top: 1.5em;
 }
 
-button, input , select , textarea , a {
+button,
+input,
+select,
+textarea,
+a {
   outline-offset: 3px;
 }
 
@@ -93,9 +96,8 @@ button, input , select , textarea , a {
 }
 
 .inline-block {
-  display: inline-block
+  display: inline-block;
 }
-
 
 .t-gap-sm > * + * {
   margin-block-start: 0.8em;
